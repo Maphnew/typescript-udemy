@@ -31,8 +31,28 @@ tsc using-ts.ts
 5. TypeScript Advantages - Overview
 3분
 
+- Types
+- Next-gen JS Features (compiled down for older Browsers)
+- Non-JS Features like Interfaces or Generics
+- Meta-Programming Features like Decorators
+- Rich Configuration Options
+- Modern Tooling that helps even in non-TS Projects
+
 6. Course Outline
 4분
+
+- Getting Started
+- Compiler & Configuration Deep Dive
+- Working with Next-gen JS Code
+- Classes & Interfaces
+- Advanced Types & TypeScript Features
+- Generics
+- Decorators
+- Time to Practice - Full Project
+- Working with Namespaces & Modules
+- Webpack & TypeScript
+- Third-Party Libraries & TypeScript
+- React + TypeScript & NodeJS + TypeScript
 
 7. How To Get The Most Out Of The Course
 3분
@@ -42,23 +62,65 @@ tsc using-ts.ts
 
 9. The Course Project Setup
 7분
+
+- npm init, install lite-server
+
 ## Section 2:TypeScript Basics & Basic Types
 0 / 26|1시간 41분
 
 10. Module Introduction
 1분
 
+- Working with Types
+- Core Syntax & Features
+
 11. Using Types
 10분
 
+- Core Types
+```
+number
+string
+boolean
+```
+```TS
+const add = (num1: number, num2: number):number => {
+    return num1 + num2
+}
+
+const result = add(1, 5);
+console.log(result)
+```
 12. TypeScript Types vs JavaScript Types
 5분
+
+- JS uses "dynamic types" (resolved at runtime)
+- TS uses "static types" (set during development)
 
 13. Important: Type Casing
 1분
 
 14. Working with Numbers, Strings & Booleans
 6분
+
+```TS
+const add = (num1: number, num2: number, showResult: boolean, phrase: string):number => {
+    const result = n1 + n2;
+    if (showResult) {
+        console.log(phrase + result);
+    } else {
+        return result;
+    }
+    
+}
+
+const n1 = 5;
+const n2 = 2.6;
+const printResult = true;
+const resultPhrase = 'Result is: ';
+
+add(n1, n2, printResult, resultPhrase);
+```
 
 15. Type Assignment & Type Inference
 6분

@@ -1,0 +1,23 @@
+{
+  "name": "typescript-udemy",
+  "version": "1.0.0",
+  "description": "0 / 9|41분",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maphnew/typescript-udemy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maphnew/typescript-udemy/issues"
+  },
+  "homepage": "https://github.com/Maphnew/typescript-udemy#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
