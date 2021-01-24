@@ -484,17 +484,80 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 ### 34. Using "Watch Mode"
 2분
 
+```shell
+tsc app.ts -w
+```
+
 ### 35. Compiling the Entire Project / Multiple Files
 4분
 
+```shell
+tsc --init
+```
+- tsconfig.json
+
+- Compile all file
+```shell
+tsc
+```
+- Watch mode (-w, --watch)
+```shell
+tsc -w
+```
 ### 36. Including & Excluding Files
 6분
+
+- tsconfig.json
+```json
+  ... },
+  "exclude": [
+    // "analytics.ts"
+    // "**/*.dev.ts"
+    "node_modules" // would be the default
+  ],
+//   "include": [
+//     "app.ts",
+//     "analytics.ts"
+//   ],
+  "files": [
+    "app.ts"
+  ]
+}
+```
 
 ### 37. Setting a Compilation Target
 4분
 
+```json
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    "target": "es5",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",   
+    ...
+```
+
 ### 38. Understanding TypeScript Core Libs
 6분
+```json
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    // "incremental": true,                   /* Enable incremental compilation */
+    "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],   
+    ...
+```
 
 ### 39. More Configuration & Compilation Options
 2분
@@ -504,6 +567,33 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 
 ### 41. rootDir and outDir
 6분
+
+```json
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Basic Options */
+    // "incremental": true,                   /* Enable incremental compilation */
+    "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],                             /* Specify library files to be included in the compilation. */
+    // "allowJs": true,                       /* Allow javascript files to be compiled. */
+    // "checkJs": true,                       /* Report errors in .js files. */
+    // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
+    // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
+    // "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    // "outFile": "./",                       /* Concatenate and emit output to single file. */
+    "outDir": "./dist",  
+    "rootDir": "./src",
+    "removeComments": true,  
+```
 
 ### 42. Stop Emitting Files on Compilation Errors
 3분
