@@ -124,12 +124,46 @@ add(n1, n2, printResult, resultPhrase);
 
 15. Type Assignment & Type Inference
 6분
-
+```TS
+let n1: number = 5; // NO
+```
+```TS
+let n1: number;
+n1 = 5;
+```
 퀴즈 1: Understanding Types
 
 16. Object Types
 8분
+```TS
+const person1: {
+    name: string;
+    age: number;
+} = {
+    name: 'MPHNW',
+    age:30
+};
 
+// THIS IS BETTER
+const person2 = {
+    name: 'MPHNW',
+    age:30
+};
+
+console.log(person1.name);
+console.log(person2.name);
+
+// ! NOT LIKE THIS 
+const person3: object = {
+    name: 'MPHNW',
+    age:30
+};
+// OR THIS
+const person4: {} = {
+    name: 'MPHNW',
+    age:30
+};
+```
 17. Nested Objects & Types
 1분
 
