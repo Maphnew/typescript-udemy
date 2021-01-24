@@ -1,25 +1,17 @@
-type Combinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text';
+let userInput: unknown; // VS any
+let userName: string;
 
-const combine = (
-    input1: Combinable, 
-    input2: Combinable, 
-    resultConversion: ConversionDescriptor
-) => {
-    let result;
-    if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+userInput = 5;
+userInput = 'MAX';
+// userName = userInput; // ERROR
+
+if (typeof userInput === 'string') {
+    userName = userInput;
+}
+// "never"
+function generateError(message: string, code: number): never {
+    throw {message: message, errorCode: code};
+    // while(true) {}
 }
 
-const combinedAges = combine(30, 26, 'as-number');
-console.log(combinedAges);
-
-const combinedStringAges = combine('30', '26', 'as-number');
-console.log(combinedStringAges);
-
-const combinedNames = combine('Max', 'Min', 'as-text')
-console.log(combinedNames);
+generateError('An error occured', 500)

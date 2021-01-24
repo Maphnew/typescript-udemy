@@ -131,7 +131,7 @@ let n1: number = 5; // NO
 let n1: number;
 n1 = 5;
 ```
-퀴즈 1: Understanding Types
+### 퀴즈 1: Understanding Types
 
 ### 16. Object Types
 8분
@@ -329,31 +329,152 @@ const combine = (
 
 ### 25. Type Aliases & Object Types
 1분
+- Type aliases can be used to "create" your own types. You're not limited to storing union types though - you can also provide an alias to a (possibly complex) object type.
+```TS
+// This allows you to avoid unnecessary repetition and manage types centrally.
+type User = { name: string; age: number };
+const u1: User = { name: 'Max', age: 30 }; // this works!
+```
+```TS
+// For example, you can simplify this code:
+function greet(user: { name: string; age: number }) {
+  console.log('Hi, I am ' + user.name);
+}
+ 
+function isOlder(user: { name: string; age: number }, checkAge: number) {
+  return checkAge > user.age;
+}
 
-퀴즈 2: Core Types & Concepts
+// To
+type User = { name: string; age: number };
+ 
+function greet(user: User) {
+  console.log('Hi, I am ' + user.name);
+}
+ 
+function isOlder(user: User, checkAge: number) {
+  return checkAge > user.age;
+}
+
+```
+
+### 퀴즈 2: Core Types & Concepts
 
 ### 26. Function Return Types & "void"
 7분
 
+```TS
+function add(n1: number, n2: number): number {
+    return n1 + n2;
+};
+
+function printResult(num: number): void {
+    console.log( 'Result: ', num );
+}
+
+printResult(add(5,12));
+```
+
 ### 27. Functions as Types
 6분
 
+```TS
+function add(n1: number, n2: number): number {
+    return n1 + n2;
+};
+
+function printResult(num: number): void {
+    console.log( 'Result: ', num );
+}
+
+printResult(add(5,12));
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult; // ERROR
+// combineValues = 5; // ERROR
+
+console.log(combineValues(1,2));
+```
+
 ### 28. Function Types & Callbacks
 4분
+```TS
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+    const result = n1 + n2;
+    cb(result);
+}
 
-퀴즈 3: Functions & Types
+addAndHandle(10, 20, (result) => {
+    console.log(result);
+});
 
+```
+### 퀴즈 3: Functions & Types
+1. Will this code compile?
+```TS
+function sendRequest(data: string, cb: (response: any) => void) {
+  // ... sending a request with "data"
+  return cb({data: 'Hi there!'});
+}
+ 
+sendRequest('Send this!', (response) => { 
+  console.log(response);
+  return true;
+ });
+```
 ### 29. The "unknown" Type
 4분
+
+```TS
+let userInput: unknown; // VS any
+let userName: string;
+
+userInput = 5;
+userInput = 'MAX';
+// userName = userInput; // ERROR
+
+if (typeof userInput === 'string') {
+    userName = userInput;
+}
+```
 
 ### 30. The "never" Type
 4분
 
+```TS
+// "never"
+function generateError(message: string, code: number): never {
+    throw {message: message, errorCode: code};
+}
+
+generateError('An error occured', 500)
+```
+
 ### 31. Wrap Up
 2분
 
+- Object
+- Nested Objects
+- Array
+- Tuple
+- Enum
+- any
+- Union
+- Literal
+- Aliase / Custom
+- Function as Types
+- Funtion Types & Callbacks
+- unkown
+- never
+
 ### 32. Useful Resources & Links
 1분
+
+https://www.typescriptlang.org/docs/handbook/basic-types.html
+
+
 ## Section 3:The TypeScript Compiler (and its Configuration)
 0 / 15|55분
 
@@ -457,7 +578,7 @@ const combine = (
 ### 64. "readonly" Properties
 3분
 
-퀴즈 4: Class Basics
+### 퀴즈 4: Class Basics
 
 ### 65. Inheritance
 8분
@@ -480,7 +601,7 @@ const combine = (
 ### 71. Classes - A Summary
 2분
 
-퀴즈 5: Classes
+### 퀴즈 5: Classes
 
 ### 72. A First Interface
 4분
@@ -506,7 +627,7 @@ const combine = (
 ### 79. Compiling Interfaces to JavaScript
 2분
 
-퀴즈 6: Interfaces
+### 퀴즈 6: Interfaces
 
 ### 80. Wrap Up
 2분
@@ -543,7 +664,7 @@ const combine = (
 ### 90. Nullish Coalescing
 3분
 
-퀴즈 7: Advanced Types
+### 퀴즈 7: Advanced Types
 
 ### 91. Wrap Up
 1분
@@ -583,7 +704,7 @@ const combine = (
 ### 102. Generic Types vs Union Types
 4분
 
-퀴즈 8: Generics
+### 퀴즈 8: Generics
 
 ### 103. Useful Resources & Links
 1분
