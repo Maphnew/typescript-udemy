@@ -201,17 +201,109 @@ favoriteAcitivities = ['A', 1]
 19. Working with Tuples
 6분
 
+- Fixed Length Array
+```TS
+const person2: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+} = {
+    name: 'MPHNW',
+    age:30,
+    hobbies: ['Sports', 'Cooking'],
+    role: [2, 'author']
+};
+
+person2.role.push('admin'); // EXCEPTION for TUPLE
+// person2.role[1] = 10; // ERROR
+// person2.role = [0, 'role', 'something'] // ERROR
+```
+
 20. Working with Enums
 7분
+
+- Automatically enumerated global constant identifiers
+
+```TS
+enum {NEW, OLD}
+```
+```TS
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const AUTHOR =2;
+
+enum Role { ADMIN = 5, READ_ONLY = 100, AUTHOR = 'AUTHOR' };
+
+const person3 = {
+    name: 'MPHNW',
+    age:30,
+    hobbies: ['Sports', 'Cooking'],
+    role: Role.ADMIN
+};
+
+if( person3.role === Role.ADMIN ) {
+    console.log('is admin')
+}
+```
 
 21. The "any" Type
 2분
 
+- *
+```TS
+let favoriteAcitivities: any[];
+favoriteAcitivities = ['A', 1]
+```
+
 22. Union Types
 7분
+- pipeline
+```TS
+const combine = (input1: number | string, input2: number | string) => {
+    let result;
+    if(typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    return result
+}
+
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
+
+const combinedNames = combine('Max', 'Min')
+console.log(combinedNames);
+```
 
 23. Literal Types
 8분
+
+```TS
+const combine = (
+    input1: number | string, 
+    input2: number | string, 
+    resultConversion: 'as-number' | 'as-text'
+) => {
+    let result;
+    if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+
+const combinedAges = combine(30, 26, 'as-number');
+console.log(combinedAges);
+
+const combinedStringAges = combine('30', '26', 'as-number');
+console.log(combinedStringAges);
+
+const combinedNames = combine('Max', 'Min', 'as-text')
+console.log(combinedNames);
+```
 
 24. Type Aliases / Custom Types
 3분

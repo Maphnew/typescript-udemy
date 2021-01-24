@@ -1,6 +1,6 @@
 const add = (num1: number, num2: number, showResult: boolean, phrase: string):number => {
     
-    const result = n1 + n2;
+    const result = num1 + num2;
     if (showResult) {
         console.log(phrase + result);
     } else {
