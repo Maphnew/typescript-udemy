@@ -597,21 +597,92 @@ tsc -w
 
 ### 42. Stop Emitting Files on Compilation Errors
 3분
+```json
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
+    /* Basic Options */
+    // "incremental": true,                   /* Enable incremental compilation */
+    "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],
+
+    // ...
+
+    "noEmitOnError": true,
+```
 ### 43. Strict Compilation
 11분
+```json
+ /* Strict Type-Checking Options */
+    "strict": true,                           /* Enable all strict type-checking options. */
+    // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,              /* Enable strict null checks. */
+    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
 
+```
 ### 44. Code Quality Options
 4분
+```json
+/* Additional Checks */
+    // "noUnusedLocals": true,                /* Report errors on unused locals. */
+    // "noUnusedParameters": true,            /* Report errors on unused parameters. */
+    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+    // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    // "noUncheckedIndexedAccess": true,      /* Include 'undefined' in index signature results */
+```
 
 ### 45. Debugging with Visual Studio Code
 4분
 
+- Debugger for Chrome
+```json
+// launch.json
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+```
+
 ### 46. Wrap Up
 1분
 
+
 ### 47. Useful Resources & Links
 1분
+
+Attached you find all the code snapshots for this module - you also find them attached to individual lectures throughout this module.
+
+These links might also be interesting:
+
+- tsconfig Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+- Compiler Config Docs: https://www.typescriptlang.org/docs/handbook/compiler-options.html
+
+- VS Code TS Debugging: https://code.visualstudio.com/docs/typescript/typescript-debugging
+
 ## Section 4:Next-generation JavaScript & TypeScript
 0 / 9|32분
 
