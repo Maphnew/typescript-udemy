@@ -831,9 +831,36 @@ These links might also be interesting:
 
 5분
 
+#### What's Object-oriented Programming(OOP)?
+
+- Work with (real-life) Entities in yout code
+
+#### Classes & Instances
+
+- Classes: Blueprints of objects
+- Object: Instances of classes (=based on classes)
+
 ### 59. Creating a First Class
 
 6분
+
+```ts
+class Department {
+  name: string;
+
+  constructor(n: string) {
+    this.name = n;
+  }
+}
+
+const accounting = new Department("Accounting");
+
+console.log(accounting);
+```
+
+```js
+Department {name: 'Accounting'}
+```
 
 ### 60. Compiling to JavaScript
 
