@@ -866,6 +866,67 @@ Department {name: 'Accounting'}
 
 3분
 
+- Compare es6 vs es5
+
+```json
+// tsconfig.json
+// ES6
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es6",
+      "dom.iterable",
+      "scripthost"
+    ],
+```
+
+```js
+// app.js
+// ES6
+"use strict";
+class Department {
+  constructor(n) {
+    this.name = n;
+  }
+}
+const accounting = new Department("Accounting");
+console.log(accounting);
+//# sourceMappingURL=app.js.map
+```
+
+```json
+// tsconfig.json
+// ES5
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    // "lib": [
+    //   "dom",
+    //   "es6",
+    //   "dom.iterable",
+    //   "scripthost"
+    // ],
+```
+
+```js
+// app.js
+// ES5
+"use strict";
+var Department = (function () {
+  function Department(n) {
+    this.name = n;
+  }
+  return Department;
+})();
+var accounting = new Department("Accounting");
+console.log(accounting);
+//# sourceMappingURL=app.js.map
+```
+
 ### 61. Constructor Functions & The "this" Keyword
 
 8분
