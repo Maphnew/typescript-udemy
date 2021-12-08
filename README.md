@@ -999,6 +999,35 @@ src/app.ts:28:12 - error TS2341: Property 'employees' is private and only access
 
 3분
 
+```ts
+class Department {
+  // private id: string;
+  // private name: string;
+  private employees: string[] = [];
+
+  constructor(private id: string, public name: string) {
+    // <-- shorthand init
+    // this.id = id;
+    // this.name = name;
+  }
+
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
+}
+
+const accounting = new Department("d1", "Accounting");
+```
+
 ### 64. "readonly" Properties
 
 3분
