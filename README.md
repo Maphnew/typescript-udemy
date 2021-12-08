@@ -1032,6 +1032,33 @@ const accounting = new Department("d1", "Accounting");
 
 3분
 
+```ts
+class Department {
+  // private readonly id: string;
+  // private name: string;
+  private employees: string[] = [];
+
+  constructor(private readonly id: string, public name: string) {
+    // this.id = id;
+    // this.name = name;
+  }
+
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
+
+  addEmployee(employee: string) {
+    this.id = "d2"; // <-- Error
+    this.employees.push(employee);
+  }
+
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
+}
+```
+
 ### 퀴즈 4: Class Basics
 
 ### 65. Inheritance
