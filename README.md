@@ -1120,6 +1120,50 @@ accountingDepartment.printReports(); // ['Something went wrong...']
 
 3분
 
+- To access employees, change employees from private to protected
+
+```ts
+class Department {
+  protected employees: string[] = []; // private -> protected
+
+  constructor(private readonly id: string, public name: string) {}
+
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
+}
+
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+  }
+
+  addEmployee(name: string) {
+    this.employees.push(name); // <- can access to employees
+  }
+
+  addReport(text: string) {
+    this.reports.push(text);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+accountingDepartment.addEmployee("maphnew");
+accountingDepartment.printEmployeeInformation(); // 1 ['maphnew']
+```
+
 ### 67. Getters & Setters
 
 7분
