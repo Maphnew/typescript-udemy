@@ -1324,6 +1324,18 @@ console.log(accountingDepartment, accountingDepartment2);
 
 2분
 
+- Class
+- Property
+- Access Modifiers
+- private, protected, public
+- method
+- static method
+- abstract method, abstract class
+- inheritance
+- extends keyword
+- override method
+- singleton pattern
+
 ### 퀴즈 5: Classes
 
 ### 72. A First Interface
