@@ -1433,6 +1433,19 @@ console.log(user1); // Person {age: 30, name: 'Maph'}
 
 2분
 
+- readonly, no access modifiers like public private ...
+
+```ts
+interface Greetable {
+  readonly name: string;
+
+  greet(phrase: string): void;
+}
+
+user1 = new Person("Maph");
+// user1.name = 'Someone' // Error
+```
+
 ### 76. Extending Interfaces
 
 3분
