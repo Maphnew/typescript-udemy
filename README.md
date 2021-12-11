@@ -1065,6 +1065,57 @@ class Department {
 
 8분
 
+- IT Department
+
+```ts
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
+}
+
+const it = new ITDepartment("d1", ["Mphnw"]);
+it.addEmployee("MAX");
+it.addEmployee("Maphnew");
+it.describe(); // Department(d1): IT
+it.printEmployeeInformation(); // 2 ['MAX', 'Maphnew']
+console.log(it);
+// ITDepartment
+// {
+//   admins: ['Mphnw']
+//   employees: (2) ['MAX', 'Maphnew']
+//   id: "d1"
+//   name: "IT"
+//   [[Prototype]]: Department
+// }
+```
+
+- Accounting Department
+
+```ts
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+  }
+
+  addReport(text: string) {
+    this.reports.push(text);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const accountingDepartment = new AccountingDepartment("d2", []);
+
+accountingDepartment.addReport("Something went wrong...");
+
+accountingDepartment.printReports(); // ['Something went wrong...']
+```
+
 ### 66. Overriding Properties & The "protected" Modifier
 
 3분
