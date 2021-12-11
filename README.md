@@ -1233,6 +1233,23 @@ console.log(accountingDepartment.mostRecentReport); // Year End Report
 
 5분
 
+- static
+
+```ts
+class Department {
+  // ...
+  static fiscalYear = "2020";
+  static createEmployee(name: string) {
+    return { name: name };
+  }
+
+  // ...
+}
+
+const employee1 = Department.createEmployee("Maph");
+console.log(employee1, Department.fiscalYear); // {name: 'Maph'} '2020'
+```
+
 ### 69. Abstract Classes
 
 5분
