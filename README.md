@@ -1295,6 +1295,31 @@ it.describe(); // IT Department ID: d1
 
 5분
 
+- singleton pattern - private constructor & static method
+
+```ts
+class AccountingDepartment extends Department {
+  private static instance: AccountingDepartment;
+  private constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  static getInstance() {
+    if (AccountingDepartment.instance) {
+      return this.instance;
+    }
+    this.instance = new AccountingDepartment("d2", []);
+    return this.instance;
+  }
+}
+
+const accountingDepartment = AccountingDepartment.getInstance();
+const accountingDepartment2 = AccountingDepartment.getInstance();
+
+console.log(accountingDepartment, accountingDepartment2);
+// same instance
+```
+
 ### 71. Classes - A Summary
 
 2분
