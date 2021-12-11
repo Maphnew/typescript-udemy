@@ -1495,6 +1495,50 @@ add = (n1: number, n2: number) => {
 
 4분
 
+- optional property
+
+```ts
+interface Named {
+  readonly name: string;
+  outputName?: string;
+}
+```
+
+```ts
+interface Named {
+  readonly name?: string; // <--optional property
+  outputName?: string;
+}
+
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name?: string; // <--optional property
+  age = 30;
+
+  constructor(n?: string) {
+    // <--optional property
+    if (n) {
+      this.name = n;
+    }
+  }
+
+  greet(phrase: string) {
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi!");
+    }
+  }
+}
+
+let user1: Greetable;
+
+user1 = new Person(); // <--no name
+```
+
 ### 79. Compiling Interfaces to JavaScript
 
 2분
