@@ -1168,6 +1168,67 @@ accountingDepartment.printEmployeeInformation(); // 1 ['maphnew']
 
 7분
 
+- getter
+
+```ts
+class AccountingDepartment extends Department {
+  private lastReport: string;
+
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
+    }
+
+    throw new Error("No report found.");
+  }
+
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  // ...
+}
+
+accountingDepartment.addReport("Something went wrong...");
+console.log(accountingDepartment.mostRecentReport); // Something went wrong...
+```
+
+- setter
+
+```ts
+class AccountingDepartment extends Department {
+  private lastReport: string;
+
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
+    }
+    throw new Error("No report found.");
+  }
+
+  set mostRecentReport(value: string) {
+    if (!value) {
+      throw new Error("Please pass in a valid value!");
+    }
+    this.addReport(value);
+  }
+
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  addReport(text: string) {
+    this.reports.push(text);
+    this.lastReport = text;
+  }
+}
+
+// accountingDepartment.mostRecentReport = ""; // Uncaught Error: Please pass in a valid value!
+accountingDepartment.addReport("Something went wrong...");
+accountingDepartment.mostRecentReport = "Year End Report";
+console.log(accountingDepartment.mostRecentReport); // Year End Report
+```
+
 ### 68. Static Methods & Properties
 
 5분
