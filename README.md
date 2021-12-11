@@ -1464,6 +1464,33 @@ interface Greetable extends Named {
 
 3분
 
+- function type
+
+```ts
+type AddFn = (n1: number, n2: number) => number;
+
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+```
+
+- function interface
+
+```ts
+// type AddFn = (a: number, b:number) => number;
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+```
+
 ### 78. Optional Parameters & Properties
 
 4분
