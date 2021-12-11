@@ -1450,6 +1450,16 @@ user1 = new Person("Maph");
 
 3분
 
+```ts
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
+```
+
 ### 77. Interfaces as Function Types
 
 3분
