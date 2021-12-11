@@ -1369,6 +1369,62 @@ user1.greet("Hi! I am"); // Hi! I am Maph
 
 6분
 
+- Why interface?
+- We can use type
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+
+  greet(phrase: string): void;
+};
+
+let user1: Person;
+
+user1 = {
+  name: "Maph",
+  age: 20,
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  },
+};
+
+user1.greet("Hi! I am"); // Hi! I am Maph
+```
+
+- Only be used to describe the structure of an object
+- type is flexible
+- interface is clearer
+
+```ts
+interface Greetable {
+  name: string;
+
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  }
+}
+
+let user1: Greetable;
+
+user1 = new Person("Maph");
+
+user1.greet("Hi! I am"); // Hi! I am Maph
+console.log(user1); // Person {age: 30, name: 'Maph'}
+```
+
 ### 74. Why Interfaces?
 
 2분
