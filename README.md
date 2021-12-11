@@ -1254,6 +1254,43 @@ console.log(employee1, Department.fiscalYear); // {name: 'Maph'} '2020'
 
 5분
 
+- Abstract 추상화
+
+```ts
+// override
+
+class Department {
+  // ...
+
+  constructor(protected readonly id: string, public name: string) {} // <-- protected
+}
+
+class AccountingDepartment extends Department {
+  describe() {
+    console.log("Accounting Department ID: " + this.id);
+  }
+}
+accountingDepartment.describe(); // Accounting Department ID: d2
+```
+
+- abstract: Enforce to share common method or property
+
+```ts
+abstract class Department {
+  // ...
+  abstract describe(this: Department): void;
+}
+
+class ITDepartment extends Department {
+  // ...
+  describe() {
+    console.log("IT Department ID: " + this.id);
+  }
+}
+
+it.describe(); // IT Department ID: d1
+```
+
 ### 70. Singletons & Private Constructors
 
 5분
