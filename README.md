@@ -1606,9 +1606,60 @@ console.log(user1);
 1. Type Casting
 1. Function Overloads
 
-### 83. Inter## Section Types
+### 83. Intersection Types
 
 5분
+
+```ts
+type Admin = {
+  name: string;
+  privileges: string[];
+};
+
+type Employee = {
+  name: string;
+  startDate: Date;
+};
+
+type ElevatedEmployee = Admin & Employee;
+
+const e1: ElevatedEmployee = {
+  name: "maph",
+  privileges: ["create-server"],
+  startDate: new Date(),
+};
+```
+
+- Can be interfaces
+
+```ts
+interface Admin {
+  name: string;
+  privileges: string[];
+}
+
+interface Employee {
+  name: string;
+  startDate: Date;
+}
+
+interface ElevatedEmployee extends Admin, Employee {}
+
+const e1: ElevatedEmployee = {
+  name: "maph",
+  privileges: ["create-server"],
+  startDate: new Date(),
+};
+```
+
+- Intersection union types
+
+```ts
+type Combinable = string | number;
+type Numeric = number | boolean;
+
+type Universal = Combinable & Numeric;
+```
 
 ### 84. More on Type Guards
 
