@@ -1543,6 +1543,43 @@ user1 = new Person(); // <--no name
 
 2분
 
+```json
+// tsconfig.json
+    "target": "es5",
+    "module": "commonjs",
+```
+
+```js
+// app.js
+
+"use strict";
+var add;
+add = function (n1, n2) {
+  return n1 + n2;
+};
+var Person = (function () {
+  function Person(n) {
+    this.age = 30;
+    if (n) {
+      this.name = n;
+    }
+  }
+  Person.prototype.greet = function (phrase) {
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi!");
+    }
+  };
+  return Person;
+})();
+var user1;
+user1 = new Person();
+user1.greet("Hi! I am");
+console.log(user1);
+//# sourceMappingURL=app.js.map
+```
+
 ### 퀴즈 6: Interfaces
 
 ### 80. Wrap Up
@@ -1560,6 +1597,14 @@ user1 = new Person(); // <--no name
 ### 82. Module Introduction
 
 1분
+
+#### Advanced Typing Concepts
+
+1. Intersection Types
+1. Type Guards
+1. Discriminated Unions
+1. Type Casting
+1. Function Overloads
 
 ### 83. Inter## Section Types
 
