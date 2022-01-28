@@ -120,9 +120,9 @@ const userInputElement = <HTMLInputElement>document.getElementById("user-input")
 // This does work
 userInputElement.value = "Hi there!"; 
 
-const userInputElementUsingAsKeyword = document.getElementById("user-input")! as HTMLInputElement; // const userInputElement: HTMLInputElement
+const userInputElementUsingAlias = document.getElementById("user-input")! as HTMLInputElement; // const userInputElement: HTMLInputElement
 // This does work too
-userInputElementUsingAsKeyword.value = "Hey!"
+userInputElementUsingAlias.value = "Hey!"
 
 // #### The non-null assertion operator ( ! )
 const inputElement1 = document.getElementById("user-input"); // const inputElement1: HTMLElement | null

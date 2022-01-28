@@ -1793,11 +1793,11 @@ const userInputElement = <HTMLInputElement>(
 // This does work
 userInputElement.value = "Hi there!";
 
-const userInputElementUsingAsKeyword = document.getElementById(
+const userInputElementUsingAlias = document.getElementById(
     "user-input"
 )! as HTMLInputElement; // const userInputElement: HTMLInputElement
 // This does work
-userInputElementUsingAsKeyword.value = "Hey!";
+userInputElementUsingAlias.value = "Hey!";
 ```
 
 #### The non-null assertion operator ( ! )
