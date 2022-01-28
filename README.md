@@ -1777,6 +1777,7 @@ function moveAnimal(animal: Animal) {
 ```
 
 ### 86. Type Casting
+- 개발자에 의해 의도적으로 값의 타입을 변환하는 것을 `명시적 타입 변환(Explicit coercion)` 또는 `타입 캐스팅(Type casting)`이라 한다.
 
 8분
 
