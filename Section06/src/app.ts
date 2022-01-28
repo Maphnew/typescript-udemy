@@ -134,3 +134,14 @@ const inputElement3 = document.getElementById("user-input");
 if(inputElement3) {
   (inputElement3 as HTMLInputElement).value = "Hi Again!"
 }
+
+// ### 87. Index Properties
+
+interface ErrorContainer { // {email: "Not a valid email", username: "Must start with a Charater"}
+  [prop: string]: string;
+}
+
+const erroBag: ErrorContainer = {
+  email: "Not a Valid Email!",
+  userName: "Must start with a capital character!"
+};

@@ -1818,6 +1818,17 @@ if (inputElement3) {
 
 7분
 
+```ts
+interface ErrorContainer { // {email: "Not a valid email", username: "Must start with a Charater"}
+  [prop: string]: string;
+}
+
+const erroBag: ErrorContainer = {
+  email: "Not a Valid Email!",
+  userName: "Must start with a capital character!"
+};
+```
+
 ### 88. Function Overloads
 
 6분
