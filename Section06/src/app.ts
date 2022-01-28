@@ -107,4 +107,30 @@ function moveAnimal(animal: Animal) {
   console.log("Moving with speed: ", speed)
 }
 
+moveAnimal({type: "bird", flyingSpeed: 10});
 
+// ### 86. Type Casting
+
+const paragraph = document.getElementById("message-output"); // const paragraph: HTMLElement | null
+const userInputElement1 = document.getElementById("user-input")!; // const userInputElement: HTMLElement | null
+// This does not work
+// userInputElement1.value = "Hi there!"; 
+
+const userInputElement = <HTMLInputElement>document.getElementById("user-input")!; // const userInputElement: HTMLInputElement
+// This does work
+userInputElement.value = "Hi there!"; 
+
+const userInputElementUsingAsKeyword = document.getElementById("user-input")! as HTMLInputElement; // const userInputElement: HTMLInputElement
+// This does work too
+userInputElementUsingAsKeyword.value = "Hey!"
+
+// #### The non-null assertion operator ( ! )
+const inputElement1 = document.getElementById("user-input"); // const inputElement1: HTMLElement | null
+const inputElement2 = document.getElementById("user-input")!; // const inputElement2: HTMLElement
+
+// Alt
+const inputElement3 = document.getElementById("user-input");
+// This does work too
+if(inputElement3) {
+  (inputElement3 as HTMLInputElement).value = "Hi Again!"
+}

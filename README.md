@@ -1780,6 +1780,39 @@ function moveAnimal(animal: Animal) {
 
 8분
 
+```ts
+const paragraph = document.getElementById("message-output"); // const paragraph: HTMLElement | null
+const userInputElement1 = document.getElementById("user-input")!; // const userInputElement: HTMLElement | null
+// This does not work
+// userInputElement1.value = "Hi there!";
+
+const userInputElement = <HTMLInputElement>(
+    document.getElementById("user-input")!
+); // const userInputElement: HTMLInputElement
+// This does work
+userInputElement.value = "Hi there!";
+
+const userInputElementUsingAsKeyword = document.getElementById(
+    "user-input"
+)! as HTMLInputElement; // const userInputElement: HTMLInputElement
+// This does work
+userInputElementUsingAsKeyword.value = "Hey!";
+```
+
+#### The non-null assertion operator ( ! )
+
+```ts
+const inputElement1 = document.getElementById("user-input"); // const inputElement1: HTMLElement | null
+const inputElement2 = document.getElementById("user-input")!; // const inputElement2: HTMLElement
+
+// Alt
+const inputElement3 = document.getElementById("user-input");
+// This does work too
+if (inputElement3) {
+    (inputElement3 as HTMLInputElement).value = "Hi Again!";
+}
+```
+
 ### 87. Index Properties
 
 7분
