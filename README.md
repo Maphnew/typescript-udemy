@@ -1773,6 +1773,7 @@ function moveAnimal(animal: Animal) {
     }
     console.log("Moving with speed: ", speed);
 }
+
 ```
 
 ### 86. Type Casting
