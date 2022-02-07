@@ -1860,7 +1860,13 @@ result.split(" ");
 4분
 
 ```ts
+const fetchedUserData = {
+  id: "u1",
+  name: "maph",
+  // job: { title: "CEO", description: "My own company" },
+};
 
+console.log(fetchedUserData?.job?.title);
 ```
 
 ### 90. Nullish Coalescing
