@@ -166,3 +166,13 @@ function add(a: Combinable, b: Combinable) {
 
 const result = add("Maph", "Nat"); // function add(a: string, b: string): string (+3 overloads)
 result.split(" ");
+
+// ### 89. Optional Chaining
+
+const fetchedUserData = {
+  id: "u1",
+  name: "maph",
+  // job: { title: "CEO", description: "My own company" },
+};
+
+console.log(fetchedUserData?.job?.title);
