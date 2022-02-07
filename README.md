@@ -1859,6 +1859,10 @@ result.split(" ");
 
 4분
 
+```ts
+
+```
+
 ### 90. Nullish Coalescing
 
 3분
