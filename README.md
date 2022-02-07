@@ -1873,6 +1873,14 @@ console.log(fetchedUserData?.job?.title);
 
 3분
 
+```ts
+const userInput = "";
+
+const storedData = userInput ?? "DEFAULT";
+
+console.log(storedData); // ""
+```
+
 ### 퀴즈 7: Advanced Types
 
 ### 91. Wrap Up
