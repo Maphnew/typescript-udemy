@@ -12,12 +12,12 @@
 
 5분
 
--   A JS Superset!
--   Building up in JS
--   New Features
--   Advantages to JS
--   Browser CANNOT execute it!
--   Should compiled to JS
+- A JS Superset!
+- Building up in JS
+- New Features
+- Advantages to JS
+- Browser CANNOT execute it!
+- Should compiled to JS
 
 ### 3. Join Our Learning Community
 
@@ -27,13 +27,13 @@
 
 13분
 
--   Install typescript
+- Install typescript
 
 ```
 npm i -g typescript
 ```
 
--   Build to JS
+- Build to JS
 
 ```
 tsc using-ts.ts
@@ -43,29 +43,29 @@ tsc using-ts.ts
 
 3분
 
--   Types
--   Next-gen JS Features (compiled down for older Browsers)
--   Non-JS Features like Interfaces or Generics
--   Meta-Programming Features like Decorators
--   Rich Configuration Options
--   Modern Tooling that helps even in non-TS Projects
+- Types
+- Next-gen JS Features (compiled down for older Browsers)
+- Non-JS Features like Interfaces or Generics
+- Meta-Programming Features like Decorators
+- Rich Configuration Options
+- Modern Tooling that helps even in non-TS Projects
 
 ### 6. Course Outline
 
 4분
 
--   Getting Started
--   Compiler & Configuration Deep Dive
--   Working with Next-gen JS Code
--   Classes & Interfaces
--   Advanced Types & TypeScript Features
--   Generics
--   Decorators
--   Time to Practice - Full Project
--   Working with Namespaces & Modules
--   Webpack & TypeScript
--   Third-Party Libraries & TypeScript
--   React + TypeScript & NodeJS + TypeScript
+- Getting Started
+- Compiler & Configuration Deep Dive
+- Working with Next-gen JS Code
+- Classes & Interfaces
+- Advanced Types & TypeScript Features
+- Generics
+- Decorators
+- Time to Practice - Full Project
+- Working with Namespaces & Modules
+- Webpack & TypeScript
+- Third-Party Libraries & TypeScript
+- React + TypeScript & NodeJS + TypeScript
 
 ### 7. How To Get The Most Out Of The Course
 
@@ -79,7 +79,7 @@ tsc using-ts.ts
 
 7분
 
--   npm init, install lite-server
+- npm init, install lite-server
 
 ## Section 2:TypeScript Basics & Basic Types
 
@@ -89,14 +89,14 @@ tsc using-ts.ts
 
 1분
 
--   Working with Types
--   Core Syntax & Features
+- Working with Types
+- Core Syntax & Features
 
 ### 11. Using Types
 
 10분
 
--   Core Types
+- Core Types
 
 ```
 number
@@ -117,8 +117,8 @@ console.log(result)
 
 5분
 
--   JS uses "dynamic types" (resolved at runtime)
--   TS uses "static types" (set during development)
+- JS uses "dynamic types" (resolved at runtime)
+- TS uses "static types" (set during development)
 
 ### 13. Important: Type Casing
 
@@ -238,7 +238,7 @@ favoriteAcitivities = ['A', 1]
 
 6분
 
--   Fixed Length Array
+- Fixed Length Array
 
 ```TS
 const person2: {
@@ -262,7 +262,7 @@ person2.role.push('admin'); // EXCEPTION for TUPLE
 
 7분
 
--   Automatically enumerated global constant identifiers
+- Automatically enumerated global constant identifiers
 
 ```TS
 enum {NEW, OLD}
@@ -291,7 +291,7 @@ if( person3.role === Role.ADMIN ) {
 
 2분
 
--   -
+- -
 
 ```TS
 let favoriteAcitivities: any[];
@@ -302,7 +302,7 @@ favoriteAcitivities = ['A', 1]
 
 7분
 
--   pipeline
+- pipeline
 
 ```TS
 const combine = (input1: number | string, input2: number | string) => {
@@ -378,7 +378,7 @@ const combine = (
 
 1분
 
--   Type aliases can be used to "create" your own types. You're not limited to storing union types though - you can also provide an alias to a (possibly complex) object type.
+- Type aliases can be used to "create" your own types. You're not limited to storing union types though - you can also provide an alias to a (possibly complex) object type.
 
 ```TS
 // This allows you to avoid unnecessary repetition and manage types centrally.
@@ -517,19 +517,19 @@ generateError('An error occured', 500)
 
 2분
 
--   Object
--   Nested Objects
--   Array
--   Tuple
--   Enum
--   any
--   Union
--   Literal
--   Aliase / Custom
--   Function as Types
--   Funtion Types & Callbacks
--   unkown
--   never
+- Object
+- Nested Objects
+- Array
+- Tuple
+- Enum
+- any
+- Union
+- Literal
+- Aliase / Custom
+- Function as Types
+- Funtion Types & Callbacks
+- unkown
+- never
 
 ### 32. Useful Resources & Links
 
@@ -561,15 +561,15 @@ tsc app.ts -w
 tsc --init
 ```
 
--   tsconfig.json
+- tsconfig.json
 
--   Compile all file
+- Compile all file
 
 ```shell
 tsc
 ```
 
--   Watch mode (-w, --watch)
+- Watch mode (-w, --watch)
 
 ```shell
 tsc -w
@@ -579,7 +579,7 @@ tsc -w
 
 6분
 
--   tsconfig.json
+- tsconfig.json
 
 ```json
   ... },
@@ -733,25 +733,25 @@ tsc -w
 
 4분
 
--   Debugger for Chrome
+- Debugger for Chrome
 
 ```json
 // launch.json
 
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
 }
 ```
 
@@ -767,11 +767,11 @@ Attached you find all the code snapshots for this module - you also find them at
 
 These links might also be interesting:
 
--   tsconfig Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+- tsconfig Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 
--   Compiler Config Docs: https://www.typescriptlang.org/docs/handbook/compiler-options.html
+- Compiler Config Docs: https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
--   VS Code TS Debugging: https://code.visualstudio.com/docs/typescript/typescript-debugging
+- VS Code TS Debugging: https://code.visualstudio.com/docs/typescript/typescript-debugging
 
 ## Section 4:Next-generation JavaScript & TypeScript
 
@@ -833,12 +833,12 @@ These links might also be interesting:
 
 #### What's Object-oriented Programming(OOP)?
 
--   Work with (real-life) Entities in yout code
+- Work with (real-life) Entities in yout code
 
 #### Classes & Instances
 
--   Classes: Blueprints of objects
--   Object: Instances of classes (=based on classes)
+- Classes: Blueprints of objects
+- Object: Instances of classes (=based on classes)
 
 ### 59. Creating a First Class
 
@@ -846,11 +846,11 @@ These links might also be interesting:
 
 ```ts
 class Department {
-    name: string;
+  name: string;
 
-    constructor(n: string) {
-        this.name = n;
-    }
+  constructor(n: string) {
+    this.name = n;
+  }
 }
 
 const accounting = new Department("Accounting");
@@ -866,7 +866,7 @@ Department {name: 'Accounting'}
 
 3분
 
--   Compare es6 vs es5
+- Compare es6 vs es5
 
 ```json
 // tsconfig.json
@@ -888,9 +888,9 @@ Department {name: 'Accounting'}
 // ES6
 "use strict";
 class Department {
-    constructor(n) {
-        this.name = n;
-    }
+  constructor(n) {
+    this.name = n;
+  }
 }
 const accounting = new Department("Accounting");
 console.log(accounting);
@@ -917,10 +917,10 @@ console.log(accounting);
 // ES5
 "use strict";
 var Department = (function () {
-    function Department(n) {
-        this.name = n;
-    }
-    return Department;
+  function Department(n) {
+    this.name = n;
+  }
+  return Department;
 })();
 var accounting = new Department("Accounting");
 console.log(accounting);
@@ -933,15 +933,15 @@ console.log(accounting);
 
 ```ts
 class Department {
-    name: string;
+  name: string;
 
-    constructor(n: string) {
-        this.name = n;
-    }
+  constructor(n: string) {
+    this.name = n;
+  }
 
-    describe(this: Department) {
-        console.log("Department:", this.name);
-    }
+  describe(this: Department) {
+    console.log("Department:", this.name);
+  }
 }
 
 const accounting = new Department("Accounting");
@@ -959,25 +959,25 @@ accountingCopy.describe();
 
 ```ts
 class Department {
-    name: string;
-    private employees: string[] = [];
+  name: string;
+  private employees: string[] = [];
 
-    constructor(n: string) {
-        this.name = n;
-    }
+  constructor(n: string) {
+    this.name = n;
+  }
 
-    describe(this: Department) {
-        console.log("Department:", this.name);
-    }
+  describe(this: Department) {
+    console.log("Department:", this.name);
+  }
 
-    addEmployee(employee: string) {
-        this.employees.push(employee);
-    }
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
 
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
-    }
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
 }
 
 const accounting = new Department("Accounting");
@@ -1001,28 +1001,28 @@ src/app.ts:28:12 - error TS2341: Property 'employees' is private and only access
 
 ```ts
 class Department {
-    // private id: string;
-    // private name: string;
-    private employees: string[] = [];
+  // private id: string;
+  // private name: string;
+  private employees: string[] = [];
 
-    constructor(private id: string, public name: string) {
-        // <-- shorthand init
-        // this.id = id;
-        // this.name = name;
-    }
+  constructor(private id: string, public name: string) {
+    // <-- shorthand init
+    // this.id = id;
+    // this.name = name;
+  }
 
-    describe(this: Department) {
-        console.log(`Department(${this.id}): ${this.name}`);
-    }
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
 
-    addEmployee(employee: string) {
-        this.employees.push(employee);
-    }
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
 
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
-    }
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
 }
 
 const accounting = new Department("d1", "Accounting");
@@ -1034,28 +1034,28 @@ const accounting = new Department("d1", "Accounting");
 
 ```ts
 class Department {
-    // private readonly id: string;
-    // private name: string;
-    private employees: string[] = [];
+  // private readonly id: string;
+  // private name: string;
+  private employees: string[] = [];
 
-    constructor(private readonly id: string, public name: string) {
-        // this.id = id;
-        // this.name = name;
-    }
+  constructor(private readonly id: string, public name: string) {
+    // this.id = id;
+    // this.name = name;
+  }
 
-    describe(this: Department) {
-        console.log(`Department(${this.id}): ${this.name}`);
-    }
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
 
-    addEmployee(employee: string) {
-        this.id = "d2"; // <-- Error
-        this.employees.push(employee);
-    }
+  addEmployee(employee: string) {
+    this.id = "d2"; // <-- Error
+    this.employees.push(employee);
+  }
 
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
-    }
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
 }
 ```
 
@@ -1065,15 +1065,15 @@ class Department {
 
 8분
 
--   IT Department
+- IT Department
 
 ```ts
 class ITDepartment extends Department {
-    admins: string[];
-    constructor(id: string, admins: string[]) {
-        super(id, "IT");
-        this.admins = admins;
-    }
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
 }
 
 const it = new ITDepartment("d1", ["Mphnw"]);
@@ -1092,21 +1092,21 @@ console.log(it);
 // }
 ```
 
--   Accounting Department
+- Accounting Department
 
 ```ts
 class AccountingDepartment extends Department {
-    constructor(id: string, private reports: string[]) {
-        super(id, "Accouting");
-    }
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+  }
 
-    addReport(text: string) {
-        this.reports.push(text);
-    }
+  addReport(text: string) {
+    this.reports.push(text);
+  }
 
-    printReports() {
-        console.log(this.reports);
-    }
+  printReports() {
+    console.log(this.reports);
+  }
 }
 
 const accountingDepartment = new AccountingDepartment("d2", []);
@@ -1120,44 +1120,44 @@ accountingDepartment.printReports(); // ['Something went wrong...']
 
 3분
 
--   To access employees, change employees from private to protected
+- To access employees, change employees from private to protected
 
 ```ts
 class Department {
-    protected employees: string[] = []; // private -> protected
+  protected employees: string[] = []; // private -> protected
 
-    constructor(private readonly id: string, public name: string) {}
+  constructor(private readonly id: string, public name: string) {}
 
-    describe(this: Department) {
-        console.log(`Department(${this.id}): ${this.name}`);
-    }
+  describe(this: Department) {
+    console.log(`Department(${this.id}): ${this.name}`);
+  }
 
-    addEmployee(employee: string) {
-        this.employees.push(employee);
-    }
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
 
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
-    }
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
 }
 
 class AccountingDepartment extends Department {
-    constructor(id: string, private reports: string[]) {
-        super(id, "Accouting");
-    }
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+  }
 
-    addEmployee(name: string) {
-        this.employees.push(name); // <- can access to employees
-    }
+  addEmployee(name: string) {
+    this.employees.push(name); // <- can access to employees
+  }
 
-    addReport(text: string) {
-        this.reports.push(text);
-    }
+  addReport(text: string) {
+    this.reports.push(text);
+  }
 
-    printReports() {
-        console.log(this.reports);
-    }
+  printReports() {
+    console.log(this.reports);
+  }
 }
 
 accountingDepartment.addEmployee("maphnew");
@@ -1168,59 +1168,59 @@ accountingDepartment.printEmployeeInformation(); // 1 ['maphnew']
 
 7분
 
--   getter
+- getter
 
 ```ts
 class AccountingDepartment extends Department {
-    private lastReport: string;
+  private lastReport: string;
 
-    get mostRecentReport() {
-        if (this.lastReport) {
-            return this.lastReport;
-        }
-
-        throw new Error("No report found.");
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
     }
 
-    constructor(id: string, private reports: string[]) {
-        super(id, "Accouting");
-        this.lastReport = reports[0];
-    }
-    // ...
+    throw new Error("No report found.");
+  }
+
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  // ...
 }
 
 accountingDepartment.addReport("Something went wrong...");
 console.log(accountingDepartment.mostRecentReport); // Something went wrong...
 ```
 
--   setter
+- setter
 
 ```ts
 class AccountingDepartment extends Department {
-    private lastReport: string;
+  private lastReport: string;
 
-    get mostRecentReport() {
-        if (this.lastReport) {
-            return this.lastReport;
-        }
-        throw new Error("No report found.");
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
     }
+    throw new Error("No report found.");
+  }
 
-    set mostRecentReport(value: string) {
-        if (!value) {
-            throw new Error("Please pass in a valid value!");
-        }
-        this.addReport(value);
+  set mostRecentReport(value: string) {
+    if (!value) {
+      throw new Error("Please pass in a valid value!");
     }
+    this.addReport(value);
+  }
 
-    constructor(id: string, private reports: string[]) {
-        super(id, "Accouting");
-        this.lastReport = reports[0];
-    }
-    addReport(text: string) {
-        this.reports.push(text);
-        this.lastReport = text;
-    }
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  addReport(text: string) {
+    this.reports.push(text);
+    this.lastReport = text;
+  }
 }
 
 // accountingDepartment.mostRecentReport = ""; // Uncaught Error: Please pass in a valid value!
@@ -1233,17 +1233,17 @@ console.log(accountingDepartment.mostRecentReport); // Year End Report
 
 5분
 
--   static
+- static
 
 ```ts
 class Department {
-    // ...
-    static fiscalYear = "2020";
-    static createEmployee(name: string) {
-        return { name: name };
-    }
+  // ...
+  static fiscalYear = "2020";
+  static createEmployee(name: string) {
+    return { name: name };
+  }
 
-    // ...
+  // ...
 }
 
 const employee1 = Department.createEmployee("Maph");
@@ -1254,38 +1254,38 @@ console.log(employee1, Department.fiscalYear); // {name: 'Maph'} '2020'
 
 5분
 
--   Abstract 추상화
+- Abstract 추상화
 
 ```ts
 // override
 
 class Department {
-    // ...
+  // ...
 
-    constructor(protected readonly id: string, public name: string) {} // <-- protected
+  constructor(protected readonly id: string, public name: string) {} // <-- protected
 }
 
 class AccountingDepartment extends Department {
-    describe() {
-        console.log("Accounting Department ID: " + this.id);
-    }
+  describe() {
+    console.log("Accounting Department ID: " + this.id);
+  }
 }
 accountingDepartment.describe(); // Accounting Department ID: d2
 ```
 
--   abstract: Enforce to share common method or property
+- abstract: Enforce to share common method or property
 
 ```ts
 abstract class Department {
-    // ...
-    abstract describe(this: Department): void;
+  // ...
+  abstract describe(this: Department): void;
 }
 
 class ITDepartment extends Department {
-    // ...
-    describe() {
-        console.log("IT Department ID: " + this.id);
-    }
+  // ...
+  describe() {
+    console.log("IT Department ID: " + this.id);
+  }
 }
 
 it.describe(); // IT Department ID: d1
@@ -1295,22 +1295,22 @@ it.describe(); // IT Department ID: d1
 
 5분
 
--   singleton pattern - private constructor & static method
+- singleton pattern - private constructor & static method
 
 ```ts
 class AccountingDepartment extends Department {
-    private static instance: AccountingDepartment;
-    private constructor(id: string, private reports: string[]) {
-        super(id, "Accouting");
-        this.lastReport = reports[0];
+  private static instance: AccountingDepartment;
+  private constructor(id: string, private reports: string[]) {
+    super(id, "Accouting");
+    this.lastReport = reports[0];
+  }
+  static getInstance() {
+    if (AccountingDepartment.instance) {
+      return this.instance;
     }
-    static getInstance() {
-        if (AccountingDepartment.instance) {
-            return this.instance;
-        }
-        this.instance = new AccountingDepartment("d2", []);
-        return this.instance;
-    }
+    this.instance = new AccountingDepartment("d2", []);
+    return this.instance;
+  }
 }
 
 const accountingDepartment = AccountingDepartment.getInstance();
@@ -1324,17 +1324,17 @@ console.log(accountingDepartment, accountingDepartment2);
 
 2분
 
--   Class
--   Property
--   Access Modifiers
--   private, protected, public
--   method
--   static method
--   abstract method, abstract class
--   inheritance
--   extends keyword
--   override method
--   singleton pattern
+- Class
+- Property
+- Access Modifiers
+- private, protected, public
+- method
+- static method
+- abstract method, abstract class
+- inheritance
+- extends keyword
+- override method
+- singleton pattern
 
 ### 퀴즈 5: Classes
 
@@ -1342,24 +1342,24 @@ console.log(accountingDepartment, accountingDepartment2);
 
 4분
 
--   Interface is structure of object
+- Interface is structure of object
 
 ```ts
 interface Person {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 }
 
 let user1: Person;
 
 user1 = {
-    name: "Maph",
-    age: 20,
-    greet(phrase: string) {
-        console.log(phrase + " " + this.name);
-    },
+  name: "Maph",
+  age: 20,
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  },
 };
 
 user1.greet("Hi! I am"); // Hi! I am Maph
@@ -1369,52 +1369,52 @@ user1.greet("Hi! I am"); // Hi! I am Maph
 
 6분
 
--   Why interface?
--   We can use type
+- Why interface?
+- We can use type
 
 ```ts
 type Person = {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 };
 
 let user1: Person;
 
 user1 = {
-    name: "Maph",
-    age: 20,
-    greet(phrase: string) {
-        console.log(phrase + " " + this.name);
-    },
+  name: "Maph",
+  age: 20,
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  },
 };
 
 user1.greet("Hi! I am"); // Hi! I am Maph
 ```
 
--   Only be used to describe the structure of an object
--   type is flexible
--   interface is clearer
+- Only be used to describe the structure of an object
+- type is flexible
+- interface is clearer
 
 ```ts
 interface Greetable {
-    name: string;
+  name: string;
 
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 }
 
 class Person implements Greetable {
-    name: string;
-    age = 30;
+  name: string;
+  age = 30;
 
-    constructor(name: string) {
-        this.name = name;
-    }
+  constructor(name: string) {
+    this.name = name;
+  }
 
-    greet(phrase: string) {
-        console.log(phrase + " " + this.name);
-    }
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  }
 }
 
 let user1: Greetable;
@@ -1433,13 +1433,13 @@ console.log(user1); // Person {age: 30, name: 'Maph'}
 
 2분
 
--   readonly, no access modifiers like public private ...
+- readonly, no access modifiers like public private ...
 
 ```ts
 interface Greetable {
-    readonly name: string;
+  readonly name: string;
 
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 }
 
 user1 = new Person("Maph");
@@ -1452,11 +1452,11 @@ user1 = new Person("Maph");
 
 ```ts
 interface Named {
-    readonly name: string;
+  readonly name: string;
 }
 
 interface Greetable extends Named {
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 }
 ```
 
@@ -1464,7 +1464,7 @@ interface Greetable extends Named {
 
 3분
 
--   function type
+- function type
 
 ```ts
 type AddFn = (n1: number, n2: number) => number;
@@ -1472,22 +1472,22 @@ type AddFn = (n1: number, n2: number) => number;
 let add: AddFn;
 
 add = (n1: number, n2: number) => {
-    return n1 + n2;
+  return n1 + n2;
 };
 ```
 
--   function interface
+- function interface
 
 ```ts
 // type AddFn = (a: number, b:number) => number;
 interface AddFn {
-    (a: number, b: number): number;
+  (a: number, b: number): number;
 }
 
 let add: AddFn;
 
 add = (n1: number, n2: number) => {
-    return n1 + n2;
+  return n1 + n2;
 };
 ```
 
@@ -1495,43 +1495,43 @@ add = (n1: number, n2: number) => {
 
 4분
 
--   optional property
+- optional property
 
 ```ts
 interface Named {
-    readonly name: string;
-    outputName?: string;
+  readonly name: string;
+  outputName?: string;
 }
 ```
 
 ```ts
 interface Named {
-    readonly name?: string; // <--optional property
-    outputName?: string;
+  readonly name?: string; // <--optional property
+  outputName?: string;
 }
 
 interface Greetable extends Named {
-    greet(phrase: string): void;
+  greet(phrase: string): void;
 }
 
 class Person implements Greetable {
-    name?: string; // <--optional property
-    age = 30;
+  name?: string; // <--optional property
+  age = 30;
 
-    constructor(n?: string) {
-        // <--optional property
-        if (n) {
-            this.name = n;
-        }
+  constructor(n?: string) {
+    // <--optional property
+    if (n) {
+      this.name = n;
     }
+  }
 
-    greet(phrase: string) {
-        if (this.name) {
-            console.log(phrase + " " + this.name);
-        } else {
-            console.log("Hi!");
-        }
+  greet(phrase: string) {
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi!");
     }
+  }
 }
 
 let user1: Greetable;
@@ -1555,23 +1555,23 @@ user1 = new Person(); // <--no name
 "use strict";
 var add;
 add = function (n1, n2) {
-    return n1 + n2;
+  return n1 + n2;
 };
 var Person = (function () {
-    function Person(n) {
-        this.age = 30;
-        if (n) {
-            this.name = n;
-        }
+  function Person(n) {
+    this.age = 30;
+    if (n) {
+      this.name = n;
     }
-    Person.prototype.greet = function (phrase) {
-        if (this.name) {
-            console.log(phrase + " " + this.name);
-        } else {
-            console.log("Hi!");
-        }
-    };
-    return Person;
+  }
+  Person.prototype.greet = function (phrase) {
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi!");
+    }
+  };
+  return Person;
 })();
 var user1;
 user1 = new Person();
@@ -1612,47 +1612,47 @@ console.log(user1);
 
 ```ts
 type Admin = {
-    name: string;
-    privileges: string[];
+  name: string;
+  privileges: string[];
 };
 
 type Employee = {
-    name: string;
-    startDate: Date;
+  name: string;
+  startDate: Date;
 };
 
 type ElevatedEmployee = Admin & Employee;
 
 const e1: ElevatedEmployee = {
-    name: "maph",
-    privileges: ["create-server"],
-    startDate: new Date(),
+  name: "maph",
+  privileges: ["create-server"],
+  startDate: new Date(),
 };
 ```
 
--   Can be interfaces
+- Can be interfaces
 
 ```ts
 interface Admin {
-    name: string;
-    privileges: string[];
+  name: string;
+  privileges: string[];
 }
 
 interface Employee {
-    name: string;
-    startDate: Date;
+  name: string;
+  startDate: Date;
 }
 
 interface ElevatedEmployee extends Admin, Employee {}
 
 const e1: ElevatedEmployee = {
-    name: "maph",
-    privileges: ["create-server"],
-    startDate: new Date(),
+  name: "maph",
+  privileges: ["create-server"],
+  startDate: new Date(),
 };
 ```
 
--   Intersection union types
+- Intersection union types
 
 ```ts
 type Combinable = string | number;
@@ -1667,10 +1667,10 @@ type Universal = Combinable & Numeric;
 
 ```ts
 function add(a: Combinable, b: Combinable) {
-    if (typeof a === "string" || typeof b === "string") {
-        return a.toString() + b.toString();
-    }
-    return a + b;
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  return a + b;
 }
 ```
 
@@ -1678,13 +1678,13 @@ function add(a: Combinable, b: Combinable) {
 type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
-    console.log(emp.name);
-    if ("privileges" in emp) {
-        console.log(emp.privileges);
-    }
-    if ("startDate" in emp) {
-        console.log(emp.startDate);
-    }
+  console.log(emp.name);
+  if ("privileges" in emp) {
+    console.log(emp.privileges);
+  }
+  if ("startDate" in emp) {
+    console.log(emp.startDate);
+  }
 }
 
 printEmployeeInformation(e1);
@@ -1693,18 +1693,18 @@ printEmployeeInformation({ name: "newMaph", startDate: new Date() });
 
 ```ts
 class Car {
-    drive() {
-        console.log("Drive...");
-    }
+  drive() {
+    console.log("Drive...");
+  }
 }
 
 class Truck {
-    drive() {
-        console.log("Drive truck...");
-    }
-    loadCargo(amount: number) {
-        console.log("Loading Cargo ... " + amount);
-    }
+  drive() {
+    console.log("Drive truck...");
+  }
+  loadCargo(amount: number) {
+    console.log("Loading Cargo ... " + amount);
+  }
 }
 
 type Vehicle = Car | Truck;
@@ -1713,11 +1713,11 @@ const v1 = new Car();
 const v2 = new Truck();
 
 function useVehicle(vehicle: Vehicle) {
-    vehicle.drive();
-    // if ("loadCargo" in vehicle) {
-    if (vehicle instanceof Truck) {
-        vehicle.loadCargo(1000);
-    }
+  vehicle.drive();
+  // if ("loadCargo" in vehicle) {
+  if (vehicle instanceof Truck) {
+    vehicle.loadCargo(1000);
+  }
 }
 
 useVehicle(v1);
@@ -1726,7 +1726,7 @@ useVehicle(v2);
 
 ### 85. Discriminated Unions
 
--   식별된 조합들
+- 식별된 조합들
 
 ```
 tsc -w
@@ -1738,17 +1738,17 @@ yarn start
 
 6분
 
--   Interface
+- Interface
 
 ```ts
 interface Bird {
-    type: "bird";
-    flyingSpeed: number;
+  type: "bird";
+  flyingSpeed: number;
 }
 
 interface Horse {
-    type: "horse";
-    runningSpeed: number;
+  type: "horse";
+  runningSpeed: number;
 }
 
 type Animal = Bird | Horse;
@@ -1760,23 +1760,23 @@ type Animal = Bird | Horse;
 // }
 
 function moveAnimal(animal: Animal) {
-    let speed;
-    switch (animal.type) {
-        case "bird":
-            speed = animal.flyingSpeed;
-            break;
-        case "horse":
-            speed = animal.runningSpeed;
-            break;
-        default:
-            break;
-    }
-    console.log("Moving with speed: ", speed);
+  let speed;
+  switch (animal.type) {
+    case "bird":
+      speed = animal.flyingSpeed;
+      break;
+    case "horse":
+      speed = animal.runningSpeed;
+      break;
+    default:
+      break;
+  }
+  console.log("Moving with speed: ", speed);
 }
-
 ```
 
 ### 86. Type Casting
+
 - 개발자에 의해 의도적으로 값의 타입을 변환하는 것을 `명시적 타입 변환(Explicit coercion)` 또는 `타입 캐스팅(Type casting)`이라 한다.
 
 8분
@@ -1788,13 +1788,13 @@ const userInputElement1 = document.getElementById("user-input")!; // const userI
 // userInputElement1.value = "Hi there!";
 
 const userInputElement = <HTMLInputElement>(
-    document.getElementById("user-input")!
+  document.getElementById("user-input")!
 ); // const userInputElement: HTMLInputElement
 // This does work
 userInputElement.value = "Hi there!";
 
 const userInputElementUsingAlias = document.getElementById(
-    "user-input"
+  "user-input"
 )! as HTMLInputElement; // const userInputElement: HTMLInputElement
 // This does work
 userInputElementUsingAlias.value = "Hey!";
@@ -1810,7 +1810,7 @@ const inputElement2 = document.getElementById("user-input")!; // const inputElem
 const inputElement3 = document.getElementById("user-input");
 // This does work too
 if (inputElement3) {
-    (inputElement3 as HTMLInputElement).value = "Hi Again!";
+  (inputElement3 as HTMLInputElement).value = "Hi Again!";
 }
 ```
 
@@ -1819,19 +1819,41 @@ if (inputElement3) {
 7분
 
 ```ts
-interface ErrorContainer { // {email: "Not a valid email", username: "Must start with a Charater"}
+interface ErrorContainer {
+  // {email: "Not a valid email", username: "Must start with a Charater"}
   [prop: string]: string;
 }
 
 const erroBag: ErrorContainer = {
   email: "Not a Valid Email!",
-  userName: "Must start with a capital character!"
+  userName: "Must start with a capital character!",
 };
 ```
 
 ### 88. Function Overloads
 
 6분
+
+```ts
+type Combinable = string | number;
+type Numeric = number | boolean;
+
+type Universal = Combinable & Numeric;
+
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: string, b: number): string;
+function add(a: number, b: string): string;
+function add(a: Combinable, b: Combinable) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+  return a + b;
+}
+
+const result = add("Maph", "Nat"); // function add(a: string, b: string): string (+3 overloads)
+result.split(" ");
+```
 
 ### 89. Optional Chaining
 
