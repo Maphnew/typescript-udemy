@@ -1899,6 +1899,13 @@ console.log(storedData); // ""
 
 1분
 
+Module Content
+
+- What?
+- Generic Functions & Classes
+- Constraints
+- Special TypeScript Types
+
 ### 94. Built-in Generics & What are Generics?
 
 9분
