@@ -1910,6 +1910,81 @@ Module Content
 
 9분
 
+- 예제
+
+```ts
+const names: Array<string> = []; // string[]
+
+const promise: Promise<number> = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (true) {
+      resolve(10);
+    } else {
+      reject(10);
+    }
+  }, 2000);
+});
+
+promise.then((data) => {
+  console.log(data);
+});
+```
+
+- 추가 정보
+
+[문서](https://www.typescriptlang.org/ko/docs/handbook/2/generics.html)
+
+- 재사용 가능한 컴포넌트를 구축하는 것
+- 현재의 데이터와 미래의 데이터 모두를 다룰 수 있는 컴포넌트는 거대한 소프트웨어 시스템을 구성하는 데 있어 가장 유연한 능력을 제공
+- C#, Java 같은 언어에서, 재사용 가능한 컴포넌트를 생성하는 도구상자의 주요 도구 중 하나는 제네릭
+- 단일 타입이 아닌 다양한 타입에서 작동하는 컴포넌트를 작성
+- 제네릭을 통해 여러 타입의 컴포넌트나 자신만의 타입을 사용할 수 있음
+
+#### 제네릭의 Hello World
+
+- 제네릭이 없다면, identity 함수에 특정 타입을 주어야 합니다.
+
+```ts
+function identity(arg: number): number {
+  return arg;
+}
+```
+
+- 또는 `any` 타입을 사용하여 identity 함수를 기술할 수 있습니다.
+
+```ts
+function identity(arg: any): any {
+  return arg;
+}
+```
+
+- `any`를 쓰는 것은 어떤 타입이든 받을 수 있다는 점에서 제네릭이지만, 실제로 함수가 반환할 때 어떤 타입인지에 대한 정보는 잃게 됩니다.
+- 대신에 우리는 무엇이 반환되는지 표시하기 위해 인수의 타입을 캡처할 방법이 필요합니다. 여기서는 값이 아닌 타입에 적용되는 타입 변수를 사용할 것입니다.
+
+```ts
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+```
+
+- identity 함수에 `Type`라는 타입 변수를 추가했습니다. `Type`은 유저가 준 인수의 타입을 캡처하고 (예 - `number`), 이 정보를 나중에 사용할 수 있게 합니다. 여기에서는 `Type`을 반환 타입으로 다시 사용합니다. 인수와 반환 타입이 같은 타입을 사용하고 있는 것을 확인할 수 있습니다. 이를 통해 타입 정보를 함수의 한쪽에서 다른 한쪽으로 운반할 수 있게끔 합니다.
+
+- 일단 제네릭 함수를 작성하고 나면, 두 가지 방법으로 호출할 수 있습니다. 첫 번째 방법은 함수에 타입 인수를 포함한 모든 인수를 전달하는 방법입니다.
+
+```ts
+let output = identity<string>("myString"); // 출력 타입은 'string'입니다.
+```
+
+- 여기서 우리는 함수를 호출할 때의 인수 중 하나로써 `Type`을 `string`으로 명시해 주고 인수 주변에 `()` 대신 `<>`로 감싸주었습니다.
+
+- 두 번째 방법은 아마 가장 일반적인 방법입니다. 여기서는 타입 인수 추론을 사용합니다. - 즉, 우리가 전달하는 인수에 따라서 컴파일러가 `Type`의 값을 자동으로 정하게 하는 것입니다.
+
+```ts
+let output = identity("myString"); // 출력 타입은 'string'입니다.
+```
+
+- 타입 인수를 꺾쇠괄호(`<>`)에 담아 명시적으로 전달해 주지 않아도 `"myString"`을 보고 그것의 타입으로 `Type`을 정합니다. 인수 추론은 코드를 간결하고 가독성 있게 하는 데 있어 유용하지만 더 복잡한 예제에서 컴파일러가 타입을 유추할 수 없는 경우엔 명시적인 타입 인수 전달이 필요할 수도 있습니다.
+
 ### 95. Creating a Generic Function
 
 9분
