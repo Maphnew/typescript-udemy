@@ -69,3 +69,14 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
 console.log(countAndDescribe("Hi there!")); // ['Hi there!', 'Got 9 elements.']
 console.log(countAndDescribe(["Sports", "Cooking"])); // [Array(2), 'Got 2 elements.']
 console.log(countAndDescribe([])); // [Array(0), 'Got no value.']
+
+// ### 98. The "keyof" Constraint
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return "Value: " + obj[key];
+}
+
+extractAndConvert({ name: "Mpahnew" }, "name");

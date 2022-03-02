@@ -2060,6 +2060,17 @@ console.log(countAndDescribe([])); // [Array(0), 'Got no value.']
 
 3분
 
+```ts
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return "Value: " + obj[key];
+}
+
+extractAndConvert({ name: "Mpahnew" }, "name");
+```
+
 ### 99. Generic Classes
 
 9분
