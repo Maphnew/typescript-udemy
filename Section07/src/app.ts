@@ -17,23 +17,35 @@
 
 // ### 95. Creating a Generic Function
 
-function merge1(objA: object, objB: object) {
+// function merge1(objA: object, objB: object) {
+//   return Object.assign(objA, objB);
+// }
+
+// const mergedObj1 = merge1({ name: "Max" }, { age: 30 });
+
+// console.log(mergedObj1); // {name: 'Max', age: 30}
+// // console.log(mergedObj1.name); // Property 'name' does not exist on type 'object'.
+
+// // Use Generic
+
+// function merge<T, U>(objA: T, objB: U) {
+//   return Object.assign(objA, objB);
+// }
+
+// const mergedObj = merge({ name: "Max" }, { age: 30 });
+// const mergedObj2 = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 });
+
+// console.log(mergedObj); // {name: 'Max', age: 30}
+// console.log(mergedObj.name); // Max
+
+// ### 96. Working with Constraints
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 }
 
-const mergedObj1 = merge1({ name: "Max" }, { age: 30 });
+// T type can be any object with any structure, but it has to be an object
 
-console.log(mergedObj1); // {name: 'Max', age: 30}
-// console.log(mergedObj1.name); // Property 'name' does not exist on type 'object'.
-
-// Use Generic
-
-function merge<T, U>(objA: T, objB: U) {
-  return Object.assign(objA, objB);
-}
-
-const mergedObj = merge({ name: "Max" }, { age: 30 });
-const mergedObj2 = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 });
-
-console.log(mergedObj); // {name: 'Max', age: 30}
-console.log(mergedObj.name); // Max
+// const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, 30); // error
+const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 });
+console.log(mergedObj); // {name: 'Max', hobbies: ["Sports"], age: 30}

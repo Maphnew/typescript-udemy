@@ -2020,6 +2020,18 @@ console.log(mergedObj.name); // Max
 
 4분
 
+```ts
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+
+// T type can be any object with any structure, but it has to be an object
+
+// const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, 30); // error
+const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 });
+console.log(mergedObj); // {name: 'Max', hobbies: ["Sports"], age: 30}
+```
+
 ### 97. Another Generic Function
 
 6분
