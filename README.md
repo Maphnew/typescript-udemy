@@ -2146,6 +2146,37 @@ const names: Readonly<string[]> = ['Maph', 'Anna'];
 
 4분
 
+- Mixed data vs Flexable static type
+
+```ts
+class DataStorage {
+  private data: (string | number | boolean)[] = [];
+
+  addItem(item: (string | number | boolean)) {
+    this.data.push(item);
+  }
+
+  removeItem(item: (string | number | boolean)) {
+    if (this.data.indexOf(item) === -1) {
+      return;
+    }
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage();
+textStorage.addItem("Maph");
+textStorage.addItem("Nat");
+textStorage.removeItem("Maph");
+console.log(textStorage.getItems());
+
+const numberStorage = new DataStorage();
+```
+
 ### 퀴즈 8: Generics
 
 ### 103. Useful Resources & Links

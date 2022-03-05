@@ -83,32 +83,32 @@ extractAndConvert({ name: "Mpahnew" }, "name");
 
 // ### 99. Generic Classes
 
-class DataStorage<T extends string | number | boolean> {
-  private data: T[] = [];
+// class DataStorage<T extends string | number | boolean> {
+//   private data: T[] = [];
 
-  addItem(item: T) {
-    this.data.push(item);
-  }
+//   addItem(item: T) {
+//     this.data.push(item);
+//   }
 
-  removeItem(item: T) {
-    if (this.data.indexOf(item) === -1) {
-      return;
-    }
-    this.data.splice(this.data.indexOf(item), 1);
-  }
+//   removeItem(item: T) {
+//     if (this.data.indexOf(item) === -1) {
+//       return;
+//     }
+//     this.data.splice(this.data.indexOf(item), 1);
+//   }
 
-  getItems() {
-    return [...this.data];
-  }
-}
+//   getItems() {
+//     return [...this.data];
+//   }
+// }
 
-const textStorage = new DataStorage<string>();
-textStorage.addItem("Maph");
-textStorage.addItem("Nat");
-textStorage.removeItem("Maph");
-console.log(textStorage.getItems());
+// const textStorage = new DataStorage<string>();
+// textStorage.addItem("Maph");
+// textStorage.addItem("Nat");
+// textStorage.removeItem("Maph");
+// console.log(textStorage.getItems());
 
-const numberStorage = new DataStorage<number>();
+// const numberStorage = new DataStorage<number>();
 
 // const objStorage = new DataStorage<object>();
 // const maphObj = { name: "Maph" };
@@ -140,3 +140,33 @@ const names: Readonly<string[]> = ['Maph', 'Anna'];
 // names.push('Nat'); // error
 // names.pop(); // error
 
+// ### 102. Generic Types vs Union Types
+
+// Mixed data vs
+
+class DataStorage {
+  private data: (string | number | boolean)[] = [];
+
+  addItem(item: (string | number | boolean)) {
+    this.data.push(item);
+  }
+
+  removeItem(item: (string | number | boolean)) {
+    if (this.data.indexOf(item) === -1) {
+      return;
+    }
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage();
+textStorage.addItem("Maph");
+textStorage.addItem("Nat");
+textStorage.removeItem("Maph");
+console.log(textStorage.getItems());
+
+const numberStorage = new DataStorage();
