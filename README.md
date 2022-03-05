@@ -2120,6 +2120,28 @@ const numberStorage = new DataStorage<number>();
 
 7분
 
+- Partial, Readonly type
+
+```ts
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(title:string, description: string, date: Date): CourseGoal{
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ['Maph', 'Anna'];
+// names.push('Nat'); // error
+// names.pop(); // error
+```
+
 ### 102. Generic Types vs Union Types
 
 4분
