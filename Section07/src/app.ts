@@ -117,3 +117,12 @@ const numberStorage = new DataStorage<number>();
 // // ...
 // objStorage.removeItem(maphObj);
 // console.log(objStorage.getItems());
+
+// ## Section 8:Decorators
+// ### 104. Module Introduction
+
+// Meta-Programming
+
+// What?
+// Decorator Usage
+// Examples!
