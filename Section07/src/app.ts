@@ -83,14 +83,79 @@ extractAndConvert({ name: "Mpahnew" }, "name");
 
 // ### 99. Generic Classes
 
-class DataStorage<T extends string | number | boolean> {
-  private data: T[] = [];
+// class DataStorage<T extends string | number | boolean> {
+//   private data: T[] = [];
 
-  addItem(item: T) {
+//   addItem(item: T) {
+//     this.data.push(item);
+//   }
+
+//   removeItem(item: T) {
+//     if (this.data.indexOf(item) === -1) {
+//       return;
+//     }
+//     this.data.splice(this.data.indexOf(item), 1);
+//   }
+
+//   getItems() {
+//     return [...this.data];
+//   }
+// }
+
+// const textStorage = new DataStorage<string>();
+// textStorage.addItem("Maph");
+// textStorage.addItem("Nat");
+// textStorage.removeItem("Maph");
+// console.log(textStorage.getItems());
+
+// const numberStorage = new DataStorage<number>();
+
+// const objStorage = new DataStorage<object>();
+// const maphObj = { name: "Maph" };
+// objStorage.addItem(maphObj);
+// objStorage.addItem({ name: "Nat" });
+// // ...
+// objStorage.removeItem(maphObj);
+// console.log(objStorage.getItems());
+
+// ### 101. Generic Utility Types
+
+// Partial, Readonly type
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ["Maph", "Anna"];
+// names.push('Nat'); // error
+// names.pop(); // error
+
+// ### 102. Generic Types vs Union Types
+
+// Mixed data vs
+
+class DataStorage {
+  private data: (string | number | boolean)[] = [];
+
+  addItem(item: string | number | boolean) {
     this.data.push(item);
   }
 
-  removeItem(item: T) {
+  removeItem(item: string | number | boolean) {
     if (this.data.indexOf(item) === -1) {
       return;
     }
@@ -102,13 +167,13 @@ class DataStorage<T extends string | number | boolean> {
   }
 }
 
-const textStorage = new DataStorage<string>();
+const textStorage = new DataStorage();
 textStorage.addItem("Maph");
 textStorage.addItem("Nat");
 textStorage.removeItem("Maph");
 console.log(textStorage.getItems());
 
-const numberStorage = new DataStorage<number>();
+// const numberStorage = new DataStorage<number>();
 
 // const objStorage = new DataStorage<object>();
 // const maphObj = { name: "Maph" };
