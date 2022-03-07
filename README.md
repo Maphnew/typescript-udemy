@@ -2129,7 +2129,11 @@ interface CourseGoal {
   completeUntil: Date;
 }
 
-function createCourseGoal(title:string, description: string, date: Date): CourseGoal{
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
   let courseGoal: Partial<CourseGoal> = {};
   courseGoal.title = title;
   courseGoal.description = description;
@@ -2137,7 +2141,7 @@ function createCourseGoal(title:string, description: string, date: Date): Course
   return courseGoal as CourseGoal;
 }
 
-const names: Readonly<string[]> = ['Maph', 'Anna'];
+const names: Readonly<string[]> = ["Maph", "Anna"];
 // names.push('Nat'); // error
 // names.pop(); // error
 ```
@@ -2152,11 +2156,11 @@ const names: Readonly<string[]> = ['Maph', 'Anna'];
 class DataStorage {
   private data: (string | number | boolean)[] = [];
 
-  addItem(item: (string | number | boolean)) {
+  addItem(item: string | number | boolean) {
     this.data.push(item);
   }
 
-  removeItem(item: (string | number | boolean)) {
+  removeItem(item: string | number | boolean) {
     if (this.data.indexOf(item) === -1) {
       return;
     }
@@ -2200,6 +2204,26 @@ const numberStorage = new DataStorage();
 ### 105. A First Class Decorator
 
 5분
+
+```ts
+function Logger(constructor: Function) {
+  console.log("Logging...");
+  console.log(constructor);
+}
+
+@Logger
+class Person {
+  name = "Maph";
+
+  constructor() {
+    console.log("Creating person object...");
+  }
+}
+
+const pers = new Person();
+
+console.log(pers);
+```
 
 ### 106. Working with Decorator Factories
 
