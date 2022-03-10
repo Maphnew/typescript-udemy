@@ -54,7 +54,52 @@
 
 // ### 107. Building More Useful Decorators
 
+// function Logger(logString: string) {
+//   return function (constructor: Function) {
+//     console.log(logString);
+//     console.log(constructor);
+//   };
+// }
+
+// function WithTemplate(template: string, hookId: string) {
+//   return function (constructor: any) {
+//     const hookEl = document.getElementById(hookId);
+//     const p = new constructor();
+//     if (hookEl) {
+//       hookEl.innerHTML = template;
+//       hookEl.querySelector("h1")!.textContent = p.name;
+//     }
+//   };
+// }
+
+// // @Logger("LOGGING - PERSON")
+// @WithTemplate("<h1>My Person Object</h1>", "app")
+// class Person {
+//   name = "Maph";
+
+//   constructor() {
+//     console.log("Creating person object...");
+//   }
+// }
+
+// const pers = new Person();
+
+// console.log(pers);
+
+// ### 108. Adding Multiple Decorators
+
+// Decorator Order
+// 1. WithTemplate
+// 2. Logger
+// (bottom up)
+
+// Decorator Factory Order
+// 1. Logger
+// 2. WithTemplate
+// (top down)
+
 function Logger(logString: string) {
+  console.log("LOGGER FACTORY");
   return function (constructor: Function) {
     console.log(logString);
     console.log(constructor);
@@ -62,7 +107,9 @@ function Logger(logString: string) {
 }
 
 function WithTemplate(template: string, hookId: string) {
+  console.log("TEMPLATE FACTORY");
   return function (constructor: any) {
+    console.log("Rendering Template");
     const hookEl = document.getElementById(hookId);
     const p = new constructor();
     if (hookEl) {
@@ -72,7 +119,7 @@ function WithTemplate(template: string, hookId: string) {
   };
 }
 
-// @Logger("LOGGING - PERSON")
+@Logger("LOGGING - PERSON")
 @WithTemplate("<h1>My Person Object</h1>", "app")
 class Person {
   name = "Maph";
