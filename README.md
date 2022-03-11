@@ -2382,6 +2382,62 @@ class Product {
 
 6분
 
+```ts
+function Log(target: any, propertyName: string | Symbol) {
+  console.log("Property decorator!");
+  console.log(target, propertyName);
+}
+
+function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
+  console.log("Accessor decorator!");
+  console.log(target); // {constructor: ƒ, getPriceWithTax: ƒ}
+  console.log(name); // price
+  console.log(descriptor); // {get: undefined, enumerable: false, configurable: true, set: ƒ}
+}
+
+function Log3(
+  target: any,
+  name: string | Symbol,
+  descriptor: PropertyDescriptor
+) {
+  console.log("Method decorator!");
+  console.log(target); // {constructor: ƒ, getPriceWithTax: ƒ}
+  console.log(name); // getPriceWithTax
+  console.log(descriptor); // {writable: true, enumerable: false, configurable: true, value: ƒ}
+}
+
+function Log4(target: any, name: string | Symbol, position: number) {
+  console.log("Parameter decorator!");
+  console.log(target); // {constructor: ƒ, getPriceWithTax: ƒ}
+  console.log(name); // getPriceWithTax
+  console.log(position); // 0
+}
+
+class Product {
+  @Log
+  title: string;
+  private _price: number;
+
+  @Log2
+  set price(val: number) {
+    if (val > 0) {
+      this._price = val;
+    } else {
+      throw new Error("Invalid price - should be positive!");
+    }
+  }
+
+  constructor(t: string, p: number) {
+    this.title = t;
+    this._price = p;
+  }
+  @Log3
+  getPriceWithTax(@Log4 tax: number) {
+    return this._price * (1 + tax);
+  }
+}
+```
+
 ### 111. When Do Decorators Execute?
 
 3분
