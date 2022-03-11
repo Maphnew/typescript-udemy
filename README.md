@@ -2503,6 +2503,41 @@ const p2 = new Product("Book2", 29);
 
 9분
 
+```ts
+function WithTemplate(template: string, hookId: string) {
+  console.log("TEMPLATE FACTORY");
+  return function <T extends { new (...args: any[]): { name: string } }>(
+    originalConstructor: T
+  ) {
+    return class extends originalConstructor {
+      constructor(..._: any[]) {
+        super();
+        console.log("Rendering Template");
+        const hookEl = document.getElementById(hookId);
+        if (hookEl) {
+          hookEl.innerHTML = template;
+          hookEl.querySelector("h1")!.textContent = this.name;
+        }
+      }
+    };
+  };
+}
+
+@Logger("LOGGING - PERSON")
+@WithTemplate("<h1>My Person Object</h1>", "app")
+class Person {
+  name = "Maph";
+
+  constructor() {
+    console.log("Creating person object...");
+  }
+}
+
+// const pers = new Person();
+
+// console.log(pers);
+```
+
 ### 113. Other Decorator Return Types
 
 4분
