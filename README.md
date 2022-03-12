@@ -2752,6 +2752,10 @@ function PositiveNumber(target: any, propName: string) {
 
 1분
 
+- Practice Time!
+
+Using TypeScript in a project
+
 ### 121. Getting Started
 
 5분
