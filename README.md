@@ -2712,6 +2712,30 @@ courseForm?.addEventListener("submit", (event) => {
 
 1분
 
+```ts
+const registerValidators: ValidatorConfig = {};
+
+function Required(target: any, propName: string) {
+  registerValidators[target.constructor.name] = {
+    ...registerValidators[target.constructor.name],
+    [propName]: [
+      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
+      "required",
+    ],
+  };
+}
+
+function PositiveNumber(target: any, propName: string) {
+  registerValidators[target.constructor.name] = {
+    ...registerValidators[target.constructor.name],
+    [propName]: [
+      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
+      "positive",
+    ],
+  };
+}
+```
+
 ### 118. Wrap Up
 
 3분

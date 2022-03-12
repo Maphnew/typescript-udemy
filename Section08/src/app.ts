@@ -129,7 +129,7 @@ button.addEventListener("click", printer.showMessage);
 
 // ### 115. Validation with Decorators - First Steps
 // ### 116. Validation with Decorators - Finished
-
+// ### 117. Fixing a Validator Bug
 interface ValidatorConfig {
   [property: string]: {
     [validatableProp: string]: string[]; // ['required', 'prositive']
@@ -141,14 +141,20 @@ const registerValidators: ValidatorConfig = {};
 function Required(target: any, propName: string) {
   registerValidators[target.constructor.name] = {
     ...registerValidators[target.constructor.name],
-    [propName]: ["required"],
+    [propName]: [
+      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
+      "required",
+    ],
   };
 }
 
 function PositiveNumber(target: any, propName: string) {
   registerValidators[target.constructor.name] = {
     ...registerValidators[target.constructor.name],
-    [propName]: ["positive"],
+    [propName]: [
+      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
+      "positive",
+    ],
   };
 }
 
