@@ -2594,7 +2594,6 @@ button.addEventListener("click", p.showMessage);
 7분
 
 ```ts
-
 function Required() {}
 
 function PositiveNumber() {}
@@ -2629,11 +2628,85 @@ courseForm?.addEventListener("submit", (event) => {
   }
   console.log(createdCourse);
 });
-
 ```
+
 ### 116. Validation with Decorators - Finished
 
 12분
+
+```ts
+interface ValidatorConfig {
+  [property: string]: {
+    [validatableProp: string]: string[]; // ['required', 'prositive']
+  };
+}
+
+const registerValidators: ValidatorConfig = {};
+
+function Required(target: any, propName: string) {
+  registerValidators[target.constructor.name] = {
+    ...registerValidators[target.constructor.name],
+    [propName]: ["required"],
+  };
+}
+
+function PositiveNumber(target: any, propName: string) {
+  registerValidators[target.constructor.name] = {
+    ...registerValidators[target.constructor.name],
+    [propName]: ["positive"],
+  };
+}
+
+function validate(obj: any) {
+  const objValidatorConfig = registerValidators[obj.constructor.name];
+  if (!objValidatorConfig) {
+    return true;
+  }
+  let isValid = true;
+  for (const prop in objValidatorConfig) {
+    for (const validator of objValidatorConfig[prop]) {
+      switch (validator) {
+        case "required":
+          isValid = isValid && !!obj[prop];
+          break;
+        case "positive":
+          isValid = isValid && obj[prop] > 0;
+          break;
+      }
+    }
+  }
+  return isValid;
+}
+class Course {
+  @Required
+  title: string;
+  @PositiveNumber
+  price: number;
+
+  constructor(t: string, p: number) {
+    this.title = t;
+    this.price = p;
+  }
+}
+
+const courseForm = document.querySelector("form");
+courseForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const titleEl = document.getElementById("title") as HTMLInputElement;
+  const priceEl = document.getElementById("price") as HTMLInputElement;
+
+  const title = titleEl.value;
+  const price = +priceEl.value;
+
+  const createdCourse = new Course(title, price);
+
+  if (!validate(createdCourse)) {
+    alert("Invalid Input");
+    return;
+  }
+  console.log(createdCourse);
+});
+```
 
 ### 117. Fixing a Validator Bug
 
