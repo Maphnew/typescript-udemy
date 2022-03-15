@@ -2759,6 +2759,7 @@ Using TypeScript in a project
 ### 121. Getting Started
 
 5분
+- Ready to Start
 
 ### 122. DOM Element Selection & OOP Rendering
 
