@@ -2759,11 +2759,40 @@ Using TypeScript in a project
 ### 121. Getting Started
 
 5분
+
 - Ready to Start
 
 ### 122. DOM Element Selection & OOP Rendering
 
 12분
+
+```ts
+class ProjectInput {
+  templateElement: HTMLTemplateElement;
+  hostElement: HTMLDivElement;
+  element: HTMLFormElement;
+
+  constructor() {
+    this.templateElement = document.getElementById(
+      "project-input"
+    )! as HTMLTemplateElement;
+    this.hostElement = document.getElementById("app")! as HTMLDivElement;
+
+    const importedNode = document.importNode(
+      this.templateElement.content,
+      true
+    );
+    this.element = importedNode.firstElementChild as HTMLFormElement;
+    this.attach();
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement("afterbegin", this.element);
+  }
+}
+
+const prjInput = new ProjectInput();
+```
 
 ### 123. Interacting with DOM Elements
 
