@@ -1787,15 +1787,11 @@ const userInputElement1 = document.getElementById("user-input")!; // const userI
 // This does not work
 // userInputElement1.value = "Hi there!";
 
-const userInputElement = <HTMLInputElement>(
-  document.getElementById("user-input")!
-); // const userInputElement: HTMLInputElement
+const userInputElement = <HTMLInputElement>document.getElementById("user-input")!; // const userInputElement: HTMLInputElement
 // This does work
 userInputElement.value = "Hi there!";
 
-const userInputElementUsingAlias = document.getElementById(
-  "user-input"
-)! as HTMLInputElement; // const userInputElement: HTMLInputElement
+const userInputElementUsingAlias = document.getElementById("user-input")! as HTMLInputElement; // const userInputElement: HTMLInputElement
 // This does work
 userInputElementUsingAlias.value = "Hey!";
 ```
@@ -2061,10 +2057,7 @@ console.log(countAndDescribe([])); // [Array(0), 'Got no value.']
 3분
 
 ```ts
-function extractAndConvert<T extends object, U extends keyof T>(
-  obj: T,
-  key: U
-) {
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
   return "Value: " + obj[key];
 }
 
@@ -2129,11 +2122,7 @@ interface CourseGoal {
   completeUntil: Date;
 }
 
-function createCourseGoal(
-  title: string,
-  description: string,
-  date: Date
-): CourseGoal {
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
   let courseGoal: Partial<CourseGoal> = {};
   courseGoal.title = title;
   courseGoal.description = description;
@@ -2395,11 +2384,7 @@ function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
   console.log(descriptor); // {get: undefined, enumerable: false, configurable: true, set: ƒ}
 }
 
-function Log3(
-  target: any,
-  name: string | Symbol,
-  descriptor: PropertyDescriptor
-) {
+function Log3(target: any, name: string | Symbol, descriptor: PropertyDescriptor) {
   console.log("Method decorator!");
   console.log(target); // {constructor: ƒ, getPriceWithTax: ƒ}
   console.log(name); // getPriceWithTax
@@ -2454,11 +2439,7 @@ function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
   console.log(descriptor);
 }
 
-function Log3(
-  target: any,
-  name: string | Symbol,
-  descriptor: PropertyDescriptor
-) {
+function Log3(target: any, name: string | Symbol, descriptor: PropertyDescriptor) {
   console.log("Method decorator!");
   console.log(target);
   console.log(name);
@@ -2506,9 +2487,7 @@ const p2 = new Product("Book2", 29);
 ```ts
 function WithTemplate(template: string, hookId: string) {
   console.log("TEMPLATE FACTORY");
-  return function <T extends { new (...args: any[]): { name: string } }>(
-    originalConstructor: T
-  ) {
+  return function <T extends { new (...args: any[]): { name: string } }>(originalConstructor: T) {
     return class extends originalConstructor {
       constructor(..._: any[]) {
         super();
@@ -2718,20 +2697,14 @@ const registerValidators: ValidatorConfig = {};
 function Required(target: any, propName: string) {
   registerValidators[target.constructor.name] = {
     ...registerValidators[target.constructor.name],
-    [propName]: [
-      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
-      "required",
-    ],
+    [propName]: [...(registerValidators[target.constructor.name]?.[propName] ?? []), "required"],
   };
 }
 
 function PositiveNumber(target: any, propName: string) {
   registerValidators[target.constructor.name] = {
     ...registerValidators[target.constructor.name],
-    [propName]: [
-      ...(registerValidators[target.constructor.name]?.[propName] ?? []),
-      "positive",
-    ],
+    [propName]: [...(registerValidators[target.constructor.name]?.[propName] ?? []), "positive"],
   };
 }
 ```
@@ -2764,6 +2737,12 @@ Using TypeScript in a project
 
 ### 122. DOM Element Selection & OOP Rendering
 
+- `document.importNode`: 현재문서가 아닌 외부문서의 노드를 복사하여 현재의 문서에 넣을 수 있도록 해준다.
+
+- html template 태그는 기본적으로 `display: none` 이다.
+
+- `insertAdjacentElement(position, element)`: 엘리먼트 삽입 메서드
+
 12분
 
 ```ts
@@ -2773,15 +2752,10 @@ class ProjectInput {
   element: HTMLFormElement;
 
   constructor() {
-    this.templateElement = document.getElementById(
-      "project-input"
-    )! as HTMLTemplateElement;
+    this.templateElement = document.getElementById("project-input")! as HTMLTemplateElement;
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
 
-    const importedNode = document.importNode(
-      this.templateElement.content,
-      true
-    );
+    const importedNode = document.importNode(this.templateElement.content, true);
     this.element = importedNode.firstElementChild as HTMLFormElement;
     this.attach();
   }
@@ -2796,6 +2770,8 @@ const prjInput = new ProjectInput();
 
 ### 123. Interacting with DOM Elements
 
+- `configure`메서드에서 `submitHandler`에 this를 바인딩 해주지 않으면 `this`는 form element가 된다.
+
 8분
 
 ```ts
@@ -2808,27 +2784,16 @@ class ProjectInput {
   peopleInputElement: HTMLInputElement;
 
   constructor() {
-    this.templateElement = document.getElementById(
-      "project-input"
-    )! as HTMLTemplateElement;
+    this.templateElement = document.getElementById("project-input")! as HTMLTemplateElement;
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
 
-    const importedNode = document.importNode(
-      this.templateElement.content,
-      true
-    );
+    const importedNode = document.importNode(this.templateElement.content, true);
     this.element = importedNode.firstElementChild as HTMLFormElement;
     this.element.id = "user-input";
 
-    this.titleInputElement = this.element.querySelector(
-      "#title"
-    ) as HTMLInputElement;
-    this.descriptionInputElement = this.element.querySelector(
-      "#description"
-    ) as HTMLInputElement;
-    this.peopleInputElement = this.element.querySelector(
-      "#people"
-    ) as HTMLInputElement;
+    this.titleInputElement = this.element.querySelector("#title") as HTMLInputElement;
+    this.descriptionInputElement = this.element.querySelector("#description") as HTMLInputElement;
+    this.peopleInputElement = this.element.querySelector("#people") as HTMLInputElement;
 
     this.configure();
     this.attach();
